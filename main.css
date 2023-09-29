@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+}
+
+:root {
+  --gray-color: #d4d5d7;
+  --accent-color: #ff7733;
+  --slate-color: #6e6e6e;
+}
+
+.light {
+  background-color: #fff;
+  color: #212024;
+}
+
+.dark {
+  background-color: #212024;
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0.5rem;
+  background-color: #f3f4f6;
+}
+
+.container .calc-result-header {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  gap: 0.5rem;
+}
+
+.container .calc-result-header .calc-operations-text-section p,
+.container .calc-result-header .calc-result-text-section p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--slate-color);
+  transition-duration: 0.3s;
+}
+
+.container .calc-result-header .calc-operations-text-section p.active,
+.container .calc-result-header .calc-result-text-section p.active {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.container .calc-result-header .calc-operations-text-section p.active::after {
+  content: "|";
+  color: var(--accent-color);
+  animation: showAndHide 1s ease infinite;
+}
+
+.container .calc-result-header .calc-result-text-section {
+  height: 2.5rem;
+}
+
+.container .calc-actions-header {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.container .calc-actions-header .action-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.container .calc-actions-header .action-btn:active {
+  transform: scale(0.95);
+}
+
+.container .calc-actions-header .action-btn.white {
+  background-color: #fff;
+  color: #000;
+}
+
+.container .calc-actions-header .action-btn.gray {
+  background-color: var(--gray-color);
+  color: #000;
+}
+
+.container .calc-actions-header .action-btn.red {
+  background-color: rgb(236, 68, 68);
+  color: #fff;
+}
+
+.container .calc-actions-header .action-btn.accent {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.container .calc-actions-header .action-btn .action-btn-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 992px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+@keyframes showAndHide {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
